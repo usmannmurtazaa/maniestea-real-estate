@@ -1,6 +1,5 @@
 import type { Dispatch, SetStateAction } from 'react';
 import { RotateCcw } from 'lucide-react';
-import { Reveal } from '../ui/Reveal';
 import { SectionHeading } from '../ui/SectionHeading';
 import { SelectField } from '../ui/SelectField';
 import { PropertyCard } from '../ui/PropertyCard';
@@ -39,7 +38,7 @@ export function FeaturedProperties({
   return (
     <section
       id="properties"
-      className="bg-ivory-50 pb-24 pt-32 lg:pb-32 lg:pt-40"
+      className="bg-ivory-50 pb-24 pt-40 lg:pb-32 lg:pt-48"
       aria-labelledby="properties-heading"
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
@@ -108,12 +107,11 @@ export function FeaturedProperties({
           </div>
         </div>
 
+        {/* Property Grid - Reveal wrapper removed so cards never disappear */}
         <div className="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {filtered.length > 0 ? (
-            filtered.map((property, index) => (
-              <Reveal key={property.id} delay={index * 60} className="h-full">
-                <PropertyCard property={property} />
-              </Reveal>
+            filtered.map((property) => (
+              <PropertyCard key={property.id} property={property} />
             ))
           ) : (
             <div className="col-span-full border border-dashed border-line bg-ivory-50 p-12 text-center">

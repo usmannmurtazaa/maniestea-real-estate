@@ -36,8 +36,9 @@ export function Hero({ onSearch }: HeroProps) {
   return (
     <section
       id="home"
-      className="relative isolate flex min-h-[100svh] flex-col justify-between overflow-hidden bg-charcoal"
+      className="relative isolate flex min-h-[100svh] flex-col bg-charcoal"
     >
+      {/* Background Image (Container has overflow-hidden so the image doesn't spill) */}
       <div className="absolute inset-0 -z-20 overflow-hidden">
         <img
           src={heroImage}
@@ -47,12 +48,13 @@ export function Hero({ onSearch }: HeroProps) {
         />
       </div>
 
+      {/* Overlays */}
       <div className="absolute inset-0 -z-10 bg-charcoal/45" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-charcoal/85 via-charcoal/40 to-charcoal/10" />
       <div className="absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-gradient-to-t from-charcoal/85 to-transparent" />
 
-      {/* Hero Content */}
-      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-5 pb-12 pt-32 sm:px-8 lg:pt-40">
+      {/* Hero Content (pb-48 gives space for the search panel at bottom) */}
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-5 pb-48 pt-32 sm:px-8 lg:pt-40">
         <div className="max-w-3xl">
           <div
             className="animate-rise flex items-center gap-3"
@@ -104,8 +106,8 @@ export function Hero({ onSearch }: HeroProps) {
         </div>
       </div>
 
-      {/* Search Panel - Using negative margin to overlap the next section */}
-      <div className="relative z-20 mx-auto -mb-16 w-full max-w-6xl px-5 pb-8 sm:px-8 lg:-mb-24">
+      {/* Search Panel - Absolute positioned at bottom, translated down to overlap */}
+      <div className="absolute inset-x-0 bottom-0 z-20 mx-auto w-full max-w-6xl translate-y-1/3 px-5 sm:px-8">
         <SearchPanel onSearch={onSearch} />
       </div>
     </section>

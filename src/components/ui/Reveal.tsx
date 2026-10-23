@@ -16,7 +16,15 @@ export function Reveal({ children, className, delay = 0 }: RevealProps) {
     const node = ref.current;
     if (!node) return;
 
+    // Show immediately for users who prefer reduced motion
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setVisible(true);
+      return;
+    }
+
+    // Fallback: If the element is already in view on mount, show it right away
+    const rect = node.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
       setVisible(true);
       return;
     }
@@ -28,17 +36,10 @@ export function Reveal({ children, className, delay = 0 }: RevealProps) {
           observer.disconnect();
         }
       },
-      { threshold: 0.01, rootMargin: '50px' } // More sensitive
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
     );
 
     observer.observe(node);
-
-    // Fallback: If it's already on screen when the page loads (e.g., direct link), show it immediately
-    const rect = node.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      setVisible(true);
-    }
-
     return () => observer.disconnect();
   }, []);
 
