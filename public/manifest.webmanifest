@@ -1,0 +1,17 @@
+{
+  "name": "Maniesta Real Estate",
+  "short_name": "Maniesta",
+  "description": "Exceptional properties, prestigious communities, and considered guidance in Dubai.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F6F2EA",
+  "theme_color": "#1E1D1A",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
