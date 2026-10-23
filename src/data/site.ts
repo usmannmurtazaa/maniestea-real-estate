@@ -15,7 +15,7 @@ export const siteConfig = {
   phone: '+971 4 000 0000',
   phoneHref: 'tel:+97140000000',
   address: 'Dubai, United Arab Emirates',
-  canonicalUrl: 'https://maniestea.example/',
+  canonicalUrl: 'https://maniesta-real-estate.netlify.app/',
   portfolioUrl: '',
   portfolioLabel: 'Maniesta Studio',
   social: {

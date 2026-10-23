@@ -39,7 +39,7 @@ export function FeaturedProperties({
   return (
     <section
       id="properties"
-      className="bg-ivory-50 pb-24 pt-20 lg:pb-32 lg:pt-44"
+      className="bg-ivory-50 pb-24 pt-32 lg:pb-32 lg:pt-40"
       aria-labelledby="properties-heading"
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
@@ -49,8 +49,9 @@ export function FeaturedProperties({
             eyebrow="Portfolio"
             title="Featured residences"
             description="A selection of sample residences across Dubai's most established communities. Use the filters to explore by area, type, and budget."
+            className="flex-1"
           />
-          <p className="max-w-xs text-[11px] leading-relaxed text-stone lg:text-right">
+          <p className="max-w-xs shrink-0 pb-2 text-[11px] leading-relaxed text-stone lg:text-right">
             Illustrative listings only. Prices are indicative and do not
             represent actual availability.
           </p>

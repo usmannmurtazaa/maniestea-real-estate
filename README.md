@@ -91,7 +91,7 @@ No UI framework, state manager, animation library, backend SDK, or CMS is used. 
 ### File tree
 
 ```text
-maniestea-real-estate/
+maniesta-real-estate/
 ├── index.html                        # Document shell, meta tags, JSON-LD, fonts
 ├── package.json
 ├── vite.config.ts
@@ -362,7 +362,7 @@ See [Environment Configuration](#environment-configuration). Validation rules li
 
 - **No image optimization pipeline.** The hero and card images are delivered from Unsplash CDN with `?w=` sizing; self-hosted replacements should be manually compressed (WebP/AVIF recommended).
 - **No service worker.** The manifest enables "installable" metadata but there is no offline caching.
-- **Canonical URL and Open Graph URLs still point at `https://maniestea.example/`.** Update them to your real domain before publishing — the placeholder will otherwise be indexed and shared.
+- **Canonical URL and Open Graph URLs still point at `https://maniesta-real-estate.netlify.app/`.** Update them to your real domain before publishing — the placeholder will otherwise be indexed and shared.
 - **No sitemap file.** Fine for a single-page site; add one if you later expand to multiple routes.
 - **Google Fonts is a third-party request.** Self-host the font files if you need to eliminate that dependency.
 
@@ -423,7 +423,7 @@ These are intentional scope boundaries, not bugs. They reflect the project's cur
 - **Indicative prices.** AED figures are example numbers, not live valuations or availability. The ROI calculator is explicitly labelled illustrative and excludes purchase costs, agency fees, maintenance, vacancy beyond the occupancy input, and taxes. It does not guarantee rental yields.
 - **Demo inquiry form.** Without `VITE_INQUIRY_ENDPOINT`, submissions are simulated and logged to the console. The success panel clearly states the inquiry was not delivered. See [Environment Configuration](#environment-configuration).
 - **Placeholder contact details.** `hello@maniestea.example` and `+971 4 000 0000` are placeholders and must be replaced before the site represents a real business.
-- **Placeholder canonical URL and Open Graph image.** `https://maniestea.example/` appears in `index.html` and should be replaced with the deployed domain.
+- **Placeholder canonical URL and Open Graph image.** `https://maniesta-real-estate.netlify.app/` appears in `index.html` and should be replaced with the deployed domain.
 - **Portfolio credit link.** `siteConfig.portfolioUrl` is empty, so the footer credit renders as plain text. Set it to a real URL to turn it into a link.
 - **No backend.** No authentication, admin area, property detail pages, booking, or CRM integration. Contact-form submission delivery depends entirely on the endpoint you provide.
 - **No automated tests.** There is no test runner or test suite in the repository. Verification is manual — see the QA checklist in [Contributing](#contributing).
@@ -454,7 +454,7 @@ This is a personal portfolio project, but issues and pull requests are welcome.
 
 ```bash
 git clone <repo-url>
-cd maniestea-real-estate
+cd maniesta-real-estate
 npm install
 npm run dev
 ```

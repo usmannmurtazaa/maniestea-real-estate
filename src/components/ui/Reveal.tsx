@@ -28,10 +28,17 @@ export function Reveal({ children, className, delay = 0 }: RevealProps) {
           observer.disconnect();
         }
       },
-      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
+      { threshold: 0.01, rootMargin: '50px' } // More sensitive
     );
 
     observer.observe(node);
+
+    // Fallback: If it's already on screen when the page loads (e.g., direct link), show it immediately
+    const rect = node.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      setVisible(true);
+    }
+
     return () => observer.disconnect();
   }, []);
 
